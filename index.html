@@ -8,11 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary: #6F4F37;        /* Mocha Mousse */
-      --accent: #5D3F6D;         /* Aura Indigo */
-      --background: #F8F9FA;     /* Soft Gray */
-      --text: #333333;           /* Charcoal Gray */
-      --highlight: #F9D342;      /* Butter Yellow */
+      --primary: #424454;
+      --secondary: #8B6466;
+      --card-bg: #3D2829;
+      --accent: #6194B0;
+      --header-accent: #6F4F37;
+      --highlight: #F9D342;
+      --purple: #5D3F6D;
+      --text: #f4f4f4;
       --transition: all 0.3s ease;
     }
 
@@ -25,21 +28,20 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--background);
+      background: var(--primary);
       color: var(--text);
       line-height: 1.7;
     }
 
     header {
-      background: var(--primary);
-      color: var(--background);
+      background: var(--header-accent);
       text-align: center;
       padding: 100px 20px 60px;
+      color: var(--text);
     }
 
     header h1 {
       font-size: 3.2rem;
-      font-weight: 600;
       margin-bottom: 10px;
     }
 
@@ -58,7 +60,7 @@
     }
 
     nav a {
-      color: var(--background);
+      color: #fff;
       text-decoration: none;
       font-weight: 600;
       margin: 0 16px;
@@ -71,21 +73,20 @@
     }
 
     section {
-      max-width: 900px;
+      max-width: 960px;
       margin: auto;
       padding: 60px 20px;
-      background: var(--background);
-      animation: fadeIn 1s ease-in;
+      background: var(--secondary);
     }
 
     h2 {
-      color: var(--accent);
+      color: var(--highlight);
       font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     h3 {
-      color: #555;
+      color: #ddd;
       margin-top: 1.5rem;
     }
 
@@ -102,11 +103,11 @@
     }
 
     .card {
-      background: var(--primary);
+      background: var(--card-bg);
       border-radius: 12px;
       padding: 20px;
-      color: var(--background);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      color: var(--text);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
       transition: var(--transition);
     }
 
@@ -130,21 +131,21 @@
     textarea {
       padding: 12px;
       font-size: 1rem;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 8px;
-      background: #fff;
-      color: #111;
+      background: #f9f9f9;
+      color: #222;
     }
 
     input:focus,
     textarea:focus {
-      border-color: var(--accent);
+      border: 2px solid var(--accent);
       outline: none;
     }
 
     button {
       background: var(--accent);
-      color: var(--background);
+      color: #fff;
       border: none;
       padding: 12px 24px;
       font-size: 1rem;
@@ -156,7 +157,7 @@
 
     button:hover {
       background: var(--highlight);
-      color: var(--text);
+      color: #111;
     }
 
     .resume-download {
@@ -165,38 +166,27 @@
 
     .resume-download a {
       display: inline-block;
-      background: var(--accent);
-      color: var(--background);
+      background: var(--purple);
+      color: #fff;
       padding: 10px 18px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: var(--transition);
     }
 
     .resume-download a:hover {
       background: var(--highlight);
-      color: var(--text);
+      color: #111;
     }
 
     footer {
       text-align: center;
       padding: 30px 20px;
-      background: var(--primary);
-      color: var(--background);
+      background: var(--card-bg);
+      color: var(--text);
       font-size: 0.9rem;
       margin-top: 60px;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     @media (max-width: 600px) {
@@ -282,7 +272,7 @@
       <textarea id="message" name="message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <p style="font-size: 0.8em; color: #888; margin-top: 10px;">Powered by Formspree</p>
+    <p style="font-size: 0.8em; color: #ddd; margin-top: 10px;">Powered by Formspree</p>
   </section>
 
   <footer>
