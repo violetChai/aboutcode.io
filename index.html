@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0a192f;
-            --accent: #64ffda;
-            --background: #f7f9fb;
-            --text: #333;
-            --section-bg: #ffffff;
+            --primary: #3F000F;
+            --accent: #FFD700;
+            --background: #1e1a16;
+            --text: #fefefe;
+            --section-bg: #2e1e14;
             --transition: all 0.4s ease;
         }
 
@@ -32,8 +32,8 @@
         }
 
         header {
-            background: linear-gradient(to right, #0a192f, #112240);
-            color: white;
+            background: linear-gradient(to right, #3F000F, #5A2A27);
+            color: var(--accent);
             text-align: center;
             padding: 80px 20px;
             transition: var(--transition);
@@ -45,13 +45,13 @@
         }
 
         h2 {
-            color: var(--primary);
+            color: var(--accent);
             font-size: 2rem;
             margin-bottom: 0.5em;
         }
 
         nav {
-            background: #FFD700;
+            background: var(--accent);
             text-align: center;
             padding: 15px 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -69,7 +69,7 @@
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: #fff;
         }
 
         section {
@@ -78,10 +78,6 @@
             padding: 60px 20px;
             background: var(--section-bg);
             animation: fadeIn 1s ease-in;
-        }
-
-        .section {
-            margin-bottom: 40px;
         }
 
         ul {
@@ -100,11 +96,12 @@
         }
 
         .card {
-            background: #ffffff;
+            background: #3f1f1f;
             border-radius: 12px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
             padding: 20px;
             transition: transform 0.3s;
+            color: var(--accent);
         }
 
         .card:hover {
@@ -113,7 +110,7 @@
 
         .card h4 {
             margin-top: 0;
-            color: var(--primary);
+            color: var(--accent);
         }
 
         form {
@@ -129,6 +126,8 @@
             border: 1px solid #ccc;
             border-radius: 8px;
             transition: border 0.3s;
+            background: #fefefe;
+            color: #000;
         }
 
         input:focus,
@@ -138,8 +137,8 @@
         }
 
         button {
-            background: var(--primary);
-            color: white;
+            background: var(--accent);
+            color: var(--primary);
             border: none;
             padding: 12px 20px;
             font-size: 1rem;
@@ -149,14 +148,14 @@
         }
 
         button:hover {
-            background: #1c3c59;
+            background: #e6c200;
         }
 
         footer {
             text-align: center;
             padding: 30px 20px;
-            background: #f1f1f1;
-            color: #777;
+            background: #3F000F;
+            color: var(--accent);
             font-size: 0.9em;
         }
 
@@ -179,7 +178,7 @@
         .resume-download a {
             display: inline-block;
             background: var(--accent);
-            color: #0a192f;
+            color: var(--primary);
             padding: 10px 18px;
             border-radius: 6px;
             text-decoration: none;
@@ -188,20 +187,20 @@
         }
 
         .resume-download a:hover {
-            background: #52e3c0;
+            background: #e6c200;
         }
     </style>
 </head>
 
 <body>
 
-    <header style="color:#3F000F;">
+    <header>
         <h1>Hi, I'm Lynn</h1>
-        <p>Software Engineer in Training </p> 
+        <p>Software Engineer in Training </p>
         <p>Robotics | Game Dev | Embedded Systems</p>
     </header>
 
-    <nav style="color:#3F000F;">
+    <nav>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -210,9 +209,8 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I'm a tech enthusiast with a passion for practical applications of <strong style="color:#9400D3;">CODE</strong>🚀</p> 
+        <p>I'm a tech enthusiast with a passion for practical applications of <strong style="color:#FFD700;">CODE</strong> 🚀</p>
         <p>My interests are in Programming, Robotics, Game Dev and Embedded Systems.</p>
-
         <p>Join me on my journey as I pursue my Bachelor of Computer Science developing hands-on skills in embedded systems, game development, and software programming.</p>
 
         <div class="resume-download">
@@ -270,7 +268,7 @@
 
             <button type="submit">Send Message</button>
         </form>
-        <p style="font-size: 0.8em; color: #888; margin-top: 10px;">Powered by Formspree</p>
+        <p style="font-size: 0.8em; color: #ccc; margin-top: 10px;">Powered by Formspree</p>
     </section>
 
     <footer>
