@@ -1,280 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Lynn| Programmer | Robotics | Game Dev" />
-    <title>Lynn B Programmer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #3F000F;
-            --accent: #FFD700;
-            --background: #1e1a16;
-            --text: #fefefe;
-            --section-bg: #2e1e14;
-            --transition: all 0.4s ease;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lynn | Programmer | Robotics | Game Dev" />
+  <title>Lynn B Programmer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #3F000F;
+      --accent: #FFD700;
+      --background: #1e1a16;
+      --text: #fefefe;
+      --section-bg: #26211d;
+      --card-bg: rgba(63, 31, 31, 0.8);
+      --transition: all 0.4s ease;
+    }
 
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: var(--background);
-            color: var(--text);
-            line-height: 1.6;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-        header {
-            background: linear-gradient(to right, #3F000F, #5A2A27);
-            color: var(--accent);
-            text-align: center;
-            padding: 80px 20px;
-            transition: var(--transition);
-        }
+    header {
+      background: linear-gradient(to right, #3F000F, #5A2A27);
+      color: var(--accent);
+      text-align: center;
+      padding: 100px 20px 60px;
+    }
 
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-        h2 {
-            color: var(--accent);
-            font-size: 2rem;
-            margin-bottom: 0.5em;
-        }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
 
-        nav {
-            background: var(--accent);
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    nav {
+      background: var(--accent);
+      text-align: center;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        nav a {
-            margin: 0 20px;
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 16px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
 
-        nav a:hover {
-            color: #fff;
-        }
+    nav a:hover {
+      color: white;
+    }
 
-        section {
-            max-width: 960px;
-            margin: auto;
-            padding: 60px 20px;
-            background: var(--section-bg);
-            animation: fadeIn 1s ease-in;
-        }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 20px;
+      background: var(--section-bg);
+      border-radius: 10px;
+      margin-top: 40px;
+    }
 
-        ul {
-            padding-left: 20px;
-        }
+    h2 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
 
-        li {
-            margin-bottom: 10px;
-        }
+    h3 {
+      color: #e2e2e2;
+      margin-top: 1.5rem;
+    }
 
-        .project-cards {
-            display: grid;
-            gap: 20px;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            margin-top: 20px;
-        }
+    p {
+      margin: 10px 0;
+      font-size: 1.05rem;
+    }
 
-        .card {
-            background: #3f1f1f;
-            border-radius: 12px;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            transition: transform 0.3s;
-            color: var(--accent);
-        }
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 20px;
+      color: var(--accent);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: var(--transition);
+    }
 
-        .card h4 {
-            margin-top: 0;
-            color: var(--accent);
-        }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(255, 215, 0, 0.2);
+    }
 
-        form {
-            display: grid;
-            gap: 1.2em;
-            margin-top: 1em;
-        }
+    .card h4 {
+      margin-top: 0;
+      color: var(--accent);
+    }
 
-        input,
-        textarea {
-            padding: 12px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            transition: border 0.3s;
-            background: #fefefe;
-            color: #000;
-        }
+    form {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
 
-        input:focus,
-        textarea:focus {
-            border-color: var(--accent);
-            outline: none;
-        }
+    input,
+    textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #fff;
+      color: #111;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-        button {
-            background: var(--accent);
-            color: var(--primary);
-            border: none;
-            padding: 12px 20px;
-            font-size: 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+    input:focus,
+    textarea:focus {
+      outline: 2px solid var(--accent);
+    }
 
-        button:hover {
-            background: #e6c200;
-        }
+    button {
+      background: var(--accent);
+      color: var(--primary);
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background: #3F000F;
-            color: var(--accent);
-            font-size: 0.9em;
-        }
+    button:hover {
+      background: #e6c200;
+    }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
+    .resume-download {
+      margin-top: 20px;
+    }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    .resume-download a {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
 
-        .resume-download {
-            margin-top: 20px;
-        }
+    .resume-download a:hover {
+      background: #e6c200;
+    }
 
-        .resume-download a {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 10px 18px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #3F000F;
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
 
-        .resume-download a:hover {
-            background: #e6c200;
-        }
-    </style>
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+
+      nav a {
+        margin: 0 12px;
+        font-size: 0.95rem;
+      }
+
+      section {
+        padding: 40px 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <h1>Hi, I'm Lynn</h1>
+    <p>Software Engineer in Training</p>
+    <p>Robotics | Game Dev | Embedded Systems</p>
+  </header>
 
-    <header>
-        <h1>Hi, I'm Lynn</h1>
-        <p>Software Engineer in Training </p>
-        <p>Robotics | Game Dev | Embedded Systems</p>
-    </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I'm a tech enthusiast with a passion for practical applications of <strong style="color:#FFD700;">CODE</strong> 🚀</p>
+    <p>My interests are in Programming, Robotics, Game Dev and Embedded Systems.</p>
+    <p>Join me on my journey as I pursue my Bachelor of Computer Science developing hands-on skills in embedded systems, game development, and software programming.</p>
+    <div class="resume-download">
+      <a href="resume.pdf" download>Download Resume</a>
+    </div>
+  </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a tech enthusiast with a passion for practical applications of <strong style="color:#FFD700;">CODE</strong> 🚀</p>
-        <p>My interests are in Programming, Robotics, Game Dev and Embedded Systems.</p>
-        <p>Join me on my journey as I pursue my Bachelor of Computer Science developing hands-on skills in embedded systems, game development, and software programming.</p>
+  <section id="skills">
+    <h2>Skills & Interests</h2>
+    <h3>Robotics & Embedded Systems 🤖</h3>
+    <p>Building smart, connected devices with C/C++ and microcontroller hardware.</p>
+    <h3>Game Development 🎮</h3>
+    <p>Prototyping in Unity with C# to explore immersive gameplay experiences.</p>
+    <h3>Software Engineering Practices 🛠️</h3>
+    <p>Writing clean, maintainable code with an emphasis on testing and modular architecture.</p>
+  </section>
 
-        <div class="resume-download">
-            <a href="resume.pdf" download>Download Resume</a>
-        </div>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-cards">
+      <div class="card">
+        <h4>Arduino Sensor Logger</h4>
+        <p>Collecting and visualizing sensor data via serial communication with a custom microcontroller script.</p>
+      </div>
+      <div class="card">
+        <h4>Unity Puzzle Game</h4>
+        <p>A physics-based puzzle prototype developed in Unity, featuring level logic and character interaction.</p>
+      </div>
+      <div class="card">
+        <h4>Python CLI Toolkit</h4>
+        <p>Command-line tools for automating personal productivity and system-level tasks in Python.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="skills">
-        <h2>Skills & Interests</h2>
-        <h3>Robotics & Embedded Systems 🤖</h3>
-        <p>Building smart, connected devices with C/C++ and microcontroller hardware.</p>
-
-        <h3>Game Development 🎮</h3>
-        <p>Prototyping in Unity with C# to explore immersive gameplay experiences.</p>
-
-        <h3>Software Engineering Practices 🛠️</h3>
-        <p>Writing clean, maintainable code with an emphasis on testing and modular architecture.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-cards">
-            <div class="card">
-                <h4>Arduino Sensor Logger</h4>
-                <p>Collecting and visualizing sensor data via serial communication with a custom microcontroller script.
-                </p>
-            </div>
-            <div class="card">
-                <h4>Unity Puzzle Game</h4>
-                <p>A physics-based puzzle prototype developed in Unity, featuring level logic and character interaction.
-                </p>
-            </div>
-            <div class="card">
-                <h4>Python CLI Toolkit</h4>
-                <p>Command-line tools for automating personal productivity and system-level tasks in Python.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>📍 Sydney, Australia</p>
-        <p>🚀 I’m open to collaboration or project work in embedded systems, game development, or clean software
-            engineering. Let’s connect!</p>
-
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-        <p style="font-size: 0.8em; color: #ccc; margin-top: 10px;">Powered by Formspree</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Lynn B. All rights reserved.</p>
-    </footer>
-
-</body>
-
-</html>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📍 Sydney, Australia</p>
+    <p>🚀 I’m open to collaboration or project work in embedded systems, game development, or clean software engineering. Let’s connect!</p>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name"
