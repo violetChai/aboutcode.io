@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Lynn | Programmer | Robotics | Game Dev" />
   <title>Lynn B Programmer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary: #E8ECF1;
-      --section-bg: #E6DADA;
-      --card-bg: #D7C3C2;
-      --accent: #A9C6D8;
-      --header-accent: #D4B8A6;
-      --secondary-accent: #C6A8CC;
-      --highlight: #F9E89C;
-      --text: #2D2D2D;
+      --primary: #E8ECF1;        /* Background */
+      --section-bg: #E6DADA;     /* Section backgrounds */
+      --card-bg: #D7C3C2;        /* Cards */
+      --accent: #C6A8CC;         /* Buttons and nav links */
+      --highlight: #F9E89C;      /* Highlights */
+      --text: #2D2D2D;           /* Text color */
       --transition: all 0.3s ease;
     }
 
@@ -34,7 +32,7 @@
     }
 
     header {
-      background: var(--header-accent);
+      background: var(--section-bg);
       text-align: center;
       padding: 80px 20px 60px;
       color: var(--text);
@@ -60,7 +58,7 @@
     }
 
     nav a {
-      color: #2D2D2D;
+      color: var(--text);
       text-decoration: none;
       font-weight: 600;
       margin: 0 16px;
@@ -69,7 +67,7 @@
     }
 
     nav a:hover {
-      color: var(--secondary-accent);
+      color: var(--highlight);
     }
 
     section {
@@ -77,16 +75,18 @@
       margin: auto;
       padding: 60px 20px;
       background: var(--section-bg);
+      border-radius: 12px;
+      margin-bottom: 40px;
     }
 
     h2 {
-      color: var(--secondary-accent);
+      color: var(--accent);
       font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     h3 {
-      color: #444;
+      color: #555;
       margin-top: 1.5rem;
     }
 
@@ -134,7 +134,7 @@
       border: 1px solid #ccc;
       border-radius: 8px;
       background: #fff;
-      color: #2D2D2D;
+      color: var(--text);
     }
 
     input:focus,
@@ -145,7 +145,7 @@
 
     button {
       background: var(--accent);
-      color: #2D2D2D;
+      color: var(--text);
       border: none;
       padding: 12px 24px;
       font-size: 1rem;
@@ -166,7 +166,7 @@
 
     .resume-download a {
       display: inline-block;
-      background: var(--secondary-accent);
+      background: var(--accent);
       color: #fff;
       padding: 10px 18px;
       border-radius: 6px;
@@ -177,7 +177,7 @@
 
     .resume-download a:hover {
       background: var(--highlight);
-      color: #2D2D2D;
+      color: var(--text);
     }
 
     footer {
@@ -187,6 +187,7 @@
       color: #fff;
       font-size: 0.9rem;
       margin-top: 60px;
+      border-radius: 0 0 12px 12px;
     }
 
     @media (max-width: 600px) {
