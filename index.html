@@ -1,130 +1,95 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lynn | Programming | Robotics | Game Dev" />
-  <title>Lynn | Software Engineering</title>
+  <meta name="description" content="violetChai | Robotics | Programming | Game Dev" />
+  <title>violetChai | Tech Expertise</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f9f9f9;
+      --bg: #fdfcff;
       --text: #2c2c2c;
-      --primary: #a3d2ca;
-      --secondary: #e8a87c;
+      --primary: #cfc7f8;
+      --secondary: #e2d2ff;
       --card-bg: #ffffff;
-      --nav-bg: #ffffff;
-      --footer-bg: #f1f1f1;
-    }[data-theme="dark"] {
-  --bg: #1c1c1c;
-  --text: #f0f0f0;
-  --primary: #89c9bc;
-  --secondary: #e2a072;
-  --card-bg: #2c2c2c;
-  --nav-bg: #2c2c2c;
-  --footer-bg: #1a1a1a;
-}
+      --nav-bg: #f7f4fb;
+      --footer-bg: #f2eef7;
+    }
 
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.3s, color 0.3s;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
 
-header {
-  text-align: center;
-  padding: 4rem 1rem;
-  background: var(--primary);
-  color: var(--text);
-  animation: fadeIn 1s ease-in;
-}
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: var(--primary);
+      color: var(--text);
+    }
 
-nav {
-  background: var(--nav-bg);
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid #ccc;
-}
+    nav {
+      background: var(--nav-bg);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #ddd;
+    }
 
-nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
 
-.toggle {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  background: var(--secondary);
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  color: #fff;
-}
+    .toggle {
+      display: none;
+    }
 
-section {
-  padding: 3rem 1rem;
-  max-width: 960px;
-  margin: auto;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s forwards;
-}
+    section {
+      padding: 3rem 1rem;
+      max-width: 960px;
+      margin: auto;
+    }
 
-section:nth-of-type(2) { animation-delay: 0.2s; }
-section:nth-of-type(3) { animation-delay: 0.4s; }
-section:nth-of-type(4) { animation-delay: 0.6s; }
-section:nth-of-type(5) { animation-delay: 0.8s; }
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
 
-.card {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
 
-.card:hover {
-  transform: scale(1.02);
-}
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--footer-bg);
+      color: var(--text);
+    }
 
-.card img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: var(--footer-bg);
-  color: var(--text);
-}
-
-.socials a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: var(--text);
-  font-size: 1.2rem;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+    .socials a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.2rem;
+    }
   </style>
-</head><body>
+</head>
+<body>
   <nav>
     <div>
       <a href="#about">About</a>
@@ -134,75 +99,80 @@ footer {
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
-    <button class="toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
-  </nav>  <header>
-    <h1>Hello World, I'm Lynn</h1>
-    <p>Software Engineer | Robotics | Game Dev</p>
-  </header>  <section id="about">
-    <h2>About Me</h2>
+  </nav>
+
+  <header>
+    <h1>Hello World, I'm Lynn.</h1>
+    <h2>@violetChai</h2>
+    <p>Insights & Guidance in Programming, Robotics, and Game Development</p>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
     <div class="card">
-      <p>I’m a tech enthusiast immersed in software engineering. I specialise in programming, robotics, embedded systems, and game development. Currently pursuing a BCompSc, I merge hands-on code, curiosity, and systems thinking to bring ideas to life.</p>
+      <p>This site exists to demystify the practical side of modern technology. From robotics to embedded systems, programming languages to game mechanics, my focus is on distilling complexity into clarity. Through original examples, tools, and insights, you'll find guidance rooted in real-world implementation — not theory alone.</p>
+      <img src="images/profile_custom.png" alt="Personalized Profile Illustration">
     </div>
-  </section>  <section id="robotics">
+  </section>
+
+  <section id="robotics">
     <h2>Robotics</h2>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1581090700227-1e8e1f79cdb0?fit=crop&w=960&q=80" alt="Robotics">
-      <p>My focus in robotics is on intelligent, microcontroller-driven automation. Using platforms like Arduino and Raspberry Pi, I create robotic systems that interact with their environments via sensors and actuators.</p>
-      <p><strong>Trend:</strong> Robotics is set to grow by over <strong>23% CAGR through 2030</strong>, with key drivers being automation, AI integration, and service robots.</p>
-      <p><strong>Challenge:</strong> Designing robots with effective autonomy and real-world robustness requires mastering sensor fusion, control theory, and embedded software — all areas I actively explore.</p>
+      <img src="images/robotics_custom.png" alt="Robotics">
+      <p>Robotics education must bridge the gap between electronics and software. My resources emphasize real-time thinking, sensor data reliability, and embedded control theory using platforms like Arduino. Expect guides, architecture patterns, and code-level insights for scalable robotics development.</p>
+      <p><strong>Teaching Focus:</strong> Building embedded systems that handle unpredictability with robustness and clarity.</p>
     </div>
-  </section>  <section id="programming">
+  </section>
+
+  <section id="programming">
     <h2>Programming</h2>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1537432376769-00a2cd0ff1f1?fit=crop&w=960&q=80" alt="Programming">
-      <p>I write clean, modular code in C++, Python, and JavaScript. My style is pragmatic, with an emphasis on testability and long-term maintainability. I enjoy working across the stack and automating the mundane.</p>
-      <p><strong>Market Insight:</strong> Software development roles are expected to grow by <strong>25% by 2032</strong>, with demand in cloud, cybersecurity, AI, and automation.</p>
-      <p><strong>Tech Tip:</strong> I advocate for using code linters, Git versioning, and CI/CD pipelines from day one — habits that boost both quality and team collaboration.</p>
+      <img src="images/programming_custom.png" alt="Programming">
+      <p>Clear, modular programming is not optional — it’s foundational. I share techniques for writing maintainable systems in C++, Python, and embedded C. Articles here explore syntax, performance trade-offs, and toolchains that matter in long-term development.</p>
+      <p><strong>Educator's Angle:</strong> It's not just what code does — it’s how future developers will reason about it.</p>
     </div>
-  </section>  <section id="gamedev">
+  </section>
+
+  <section id="gamedev">
     <h2>Game Development</h2>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d4?fit=crop&w=960&q=80" alt="Game Development">
-      <p>I prototype game mechanics and build puzzle platforms in Unity using C#. My strengths lie in gameplay design, interactive storytelling, and implementing fluid controls.</p>
-      <p><strong>Industry Growth:</strong> The global gaming market is forecasted to exceed <strong>$500B by 2030</strong>. Indie developers are a huge part of this evolution, making tools like Unity indispensable.</p>
-      <p><strong>Insight:</strong> A great game balances design, code, and psychology. My approach includes user testing early in development to refine how players interact with the world.</p>
+      <img src="images/gamedev_custom.png" alt="Game Development">
+      <p>Game dev blends logic with narrative. My work explores the mechanics of interaction, design architecture, and real-time performance in Unity using C#. Whether teaching coroutines, state machines, or input systems, I prioritize readability and playability.</p>
+      <p><strong>Industry Note:</strong> The tools we use in games often mirror those needed in simulation, UX design, and HCI education.</p>
     </div>
-  </section>  <section id="projects">
+  </section>
+
+  <section id="projects">
     <h2>Projects</h2>
     <div class="card">
       <h3>Sensor Logger</h3>
-      <p>Arduino-based data logger for real-time sensor capture. Used C++ for firmware and Python for data visualization.</p>
+      <p>A modular data logger for education: Designed for classrooms and tinkerers alike. Logs data using Arduino, explains circuit logic, and visualizes results with Python scripts.</p>
     </div>
     <div class="card">
-      <h3>Puzzle Platformer</h3>
-      <p>Unity puzzle game prototype with physics-based challenges. Developed game logic and character mechanics in C#.</p>
+      <h3>Unity Puzzle Game Prototype</h3>
+      <p>Used in teaching control systems and timing logic, this Unity game prototype demonstrates cause-effect interactions and event-based design.</p>
     </div>
     <div class="card">
       <h3>CLI Productivity Toolkit</h3>
-      <p>A suite of command-line tools built in Python to streamline local development and system automation tasks.</p>
+      <p>Python-based command-line tools built to teach scripting fundamentals, argument parsing, and subprocess handling — with immediate payoff in real dev environments.</p>
     </div>
-  </section>  <section id="contact">
+  </section>
+
+  <section id="contact">
     <h2>Contact</h2>
     <div class="card">
-      <p><strong>📍 Location:</strong> Sydney, Australia</p>
-      <p><strong>📧 Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-      <p>I’m open to collaboration, freelance work, and creative dev challenges. Let’s connect!</p>
+      <p><strong>📍 Sydney, Australia</strong></p>
+      <p><strong>📧</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>I publish tutorials, toolkits, and explainers to support learners, educators, and teams building technical confidence. Reach out to collaborate or request content on a topic.</p>
       <div class="socials">
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/violetChai" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/programmerlynn" target="_blank">LinkedIn</a>
       </div>
     </div>
-  </section>  <footer>
-    <p>&copy; 2025 Lynn B. All rights reserved.</p>
-  </footer>  <script>
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute("data-theme");
-      document.documentElement.setAttribute("data-theme", current === "dark" ? "light" : "dark");
-    }
-    document.documentElement.setAttribute("data-theme", "light");
-  </script>  <!-- Google Analytics -->  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script></body></html>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 violetChai • Practical tech education for curious minds.</p>
+  </footer>
+</body>
+</html>
