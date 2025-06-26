@@ -8,13 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fdfcff;
-      --text: #2c2c2c;
-      --primary: #cfc7f8;
-      --secondary: #e2d2ff;
-      --card-bg: #ffffff;
-      --nav-bg: #f7f4fb;
-      --footer-bg: #f2eef7;
+      --bg: #1e1f26;
+      --text: #eaeaea;
+      --primary: #2c2d3c;
+      --secondary: #aa99e8;
+      --highlight: #fca311;
+      --card-bg: #2a2b36;
+      --nav-bg: #1c1c24;
+      --footer-bg: #1a1a21;
     }
 
     body {
@@ -29,6 +30,7 @@
       padding: 4rem 1rem;
       background: var(--primary);
       color: var(--text);
+      border-bottom: 3px solid var(--highlight);
     }
 
     nav {
@@ -40,7 +42,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid var(--highlight);
     }
 
     nav a {
@@ -48,6 +50,11 @@
       text-decoration: none;
       color: var(--text);
       font-weight: 600;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--highlight);
+      padding-bottom: 0.5rem;
     }
 
     .toggle {
@@ -65,7 +72,7 @@
       padding: 1.5rem;
       border-radius: 12px;
       margin-bottom: 2rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
     .card img {
@@ -79,13 +86,34 @@
       padding: 2rem;
       background: var(--footer-bg);
       color: var(--text);
+      border-top: 2px solid var(--highlight);
     }
 
     .socials a {
       margin: 0 10px;
       text-decoration: none;
-      color: var(--text);
+      color: var(--secondary);
       font-size: 1.2rem;
+    }
+
+    input, textarea, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #555;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      background: #121217;
+      color: var(--text);
+    }
+
+    button {
+      background-color: var(--secondary);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
     }
   </style>
 </head>
@@ -104,42 +132,41 @@
   <header>
     <h1>Hello World, I'm Lynn.</h1>
     <h2>@violetChai</h2>
-    
     <p><i>Insights & Guidance in Programming, Robotics, and Game Development</i></p>
   </header>
 
   <section id="about">
     <h2>About</h2>
     <div class="card">
-      <p>I help to demystify the practical side of modern technology. From robotics to embedded systems, programming languages to game mechanics, my focus is on distilling complexity into clarity. Through original examples, tools, and insights, you'll find guidance rooted in real-world implementation — not theory alone.</p>
-      <! --<img src="images/profile_custom.png" alt="Personalized Profile Illustration">-->
+      <p>This site exists to demystify the practical side of modern technology. From robotics to embedded systems, programming languages to game mechanics, my focus is on distilling complexity into clarity. Through original examples, tools, and insights, you'll find guidance rooted in real-world implementation — not theory alone.</p>
+      <!-- <img src="images/profile_custom.png" alt="Personalized Profile Illustration"> -->
     </div>
   </section>
 
   <section id="robotics">
     <h2>Robotics</h2>
     <div class="card">
-      <! --<img src="images/robotics_custom.png" alt="Robotics">-->
-      <p>Robotics education must bridge the gap between electronics and software. My resources emphasise real-time thinking, sensor data reliability, and embedded control theory using platforms like Arduino. Expect guides, architecture patterns, and code-level insights for scalable robotics development.</p>
-      <p><strong>Teaching focus:</strong> Building embedded systems that handle unpredictability with robustness and clarity.</p>
+      <!-- <img src="images/robotics_custom.png" alt="Robotics"> -->
+      <p>Robotics education must bridge the gap between electronics and software. My resources emphasize real-time thinking, sensor data reliability, and embedded control theory using platforms like Arduino. Expect guides, architecture patterns, and code-level insights for scalable robotics development.</p>
+      <p><strong>Teaching Focus:</strong> Building embedded systems that handle unpredictability with robustness and clarity.</p>
     </div>
   </section>
 
   <section id="programming">
     <h2>Programming</h2>
     <div class="card">
-      <! --<img src="images/programming_custom.png" alt="Programming">-->
-      <p>Clear, modular programming is not optional — it’s foundational. I share techniques for writing maintainable systems in C++, c# and Python. Articles here explore syntax, performance trade-offs, and toolchains that matter in long-term development.</p>
-      <p><strong>Educator's angle:</strong> It's not just what code does — it’s how future developers will reason with it.</p>
+      <!-- <img src="images/programming_custom.png" alt="Programming"> -->
+      <p>Clear, modular programming is not optional — it’s foundational. I share techniques for writing maintainable systems in C++, Python, and embedded C. Articles here explore syntax, performance trade-offs, and toolchains that matter in long-term development.</p>
+      <p><strong>Educator's Angle:</strong> It's not just what code does — it’s how future developers will reason about it.</p>
     </div>
   </section>
 
   <section id="gamedev">
     <h2>Game Development</h2>
     <div class="card">
-      <! --<img src="images/gamedev_custom.png" alt="Game Development">-->
-      <p>Game dev blends logic with narrative. My work explores the mechanics of interaction, design architecture, and real-time performance in Unity using C#. Whether teaching coroutines, state machines, or input systems, I prioritise readability and playability.</p>
-      <p><strong>Industry note:</strong> The tools we use in games often mirror those needed in simulation, UX design, and HCI education.</p>
+      <!-- <img src="images/gamedev_custom.png" alt="Game Development"> -->
+      <p>Game dev blends logic with narrative. My work explores the mechanics of interaction, design architecture, and real-time performance in Unity using C#. Whether teaching coroutines, state machines, or input systems, I prioritize readability and playability.</p>
+      <p><strong>Industry Note:</strong> The tools we use in games often mirror those needed in simulation, UX design, and HCI education.</p>
     </div>
   </section>
 
@@ -163,7 +190,11 @@
     <h2>Contact</h2>
     <div class="card">
       <p><strong>📍 Sydney, Australia</strong></p>
-      <p><strong>📧</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <form action="https://formspree.io/f/xgvyprnd" method="POST">
+        <input type="email" name="_replyto" placeholder="Your email" required>
+        <textarea name="message" placeholder="Your message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
       <p>I publish tutorials, toolkits, and explainers to support learners, educators, and teams building technical confidence. Reach out to collaborate or request content on a topic.</p>
       <div class="socials">
         <a href="https://github.com/violetChai" target="_blank">GitHub</a>
