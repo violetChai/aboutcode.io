@@ -33,6 +33,20 @@
       border-bottom: 3px solid var(--highlight);
     }
 
+    .underline-animate {
+      width: 0;
+      height: 4px;
+      background-color: var(--highlight);
+      margin: 0.5rem auto 1.5rem;
+      animation: underlineGrow 1s ease forwards;
+    }
+
+    @keyframes underlineGrow {
+      to {
+        width: 60px;
+      }
+    }
+
     nav {
       background: var(--nav-bg);
       padding: 1rem;
@@ -50,15 +64,17 @@
       text-decoration: none;
       color: var(--text);
       font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--highlight);
+      text-shadow: 0 0 5px var(--highlight);
     }
 
     h2 {
       border-bottom: 2px solid var(--highlight);
       padding-bottom: 0.5rem;
-    }
-
-    .toggle {
-      display: none;
     }
 
     section {
@@ -67,12 +83,29 @@
       margin: auto;
     }
 
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .card {
       background: var(--card-bg);
       padding: 1.5rem;
       border-radius: 12px;
       margin-bottom: 2rem;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 20px rgba(252, 163, 17, 0.3);
     }
 
     .card img {
@@ -114,6 +147,12 @@
       font-weight: bold;
       cursor: pointer;
       border: none;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #cdbdff;
+      box-shadow: 0 0 10px var(--secondary);
     }
   </style>
 </head>
@@ -132,19 +171,19 @@
 
   <header>
     <h1>About Code</h1>
-    <hr style="width: 60px; height: 4px; background-color: var(--highlight); border: none; margin: 0.5rem auto 1.5rem;" />
+    <div class="underline-animate"></div>
     <p><i>Practical tech for curious minds</i></p>
     <p><i>Programming, Robotics, and Game Development</i></p>
   </header>
 
-  <section id="about">
+  <section id="about" class="fade-in">
     <h2>About</h2>
     <div class="card">
       <p>This site shares practical guidance on robotics, embedded systems, software engineering, and game development. You'll find real-world examples, distilled insights, and downloadable resources designed to support both learners and educators.</p>
     </div>
   </section>
 
-  <section id="robotics">
+  <section id="robotics" class="fade-in">
     <h2>Robotics</h2>
     <div class="card">
       <p>Robotics education must bridge the gap between electronics and software. My resources emphasize real-time thinking, sensor data reliability, and embedded control theory using platforms like Arduino. Expect guides, architecture patterns, and code-level insights for scalable robotics development.</p>
@@ -152,7 +191,7 @@
     </div>
   </section>
 
-  <section id="programming">
+  <section id="programming" class="fade-in">
     <h2>Programming</h2>
     <div class="card">
       <p>Clear, modular programming is foundational. This section covers maintainable system design in C++, Python, and embedded C. Topics include language fundamentals, toolchains, and patterns that make code more testable and extendable.</p>
@@ -160,7 +199,7 @@
     </div>
   </section>
 
-  <section id="gamedev">
+  <section id="gamedev" class="fade-in">
     <h2>Game Development</h2>
     <div class="card">
       <p>Game development blends interaction design with systems thinking. My materials explore Unity development with C#, focusing on input systems, state machines, performance, and player feedback — all from an educational standpoint.</p>
@@ -168,7 +207,7 @@
     </div>
   </section>
 
-  <section id="resources">
+  <section id="resources" class="fade-in">
     <h2>Resources</h2>
     <div class="card">
       <h3>Logic Gates Reference Guide</h3>
@@ -191,12 +230,11 @@
       <a href="arduino-guide.pdf" download>Download Arduino Guide</a>
     </div>
 
-    <!-- Giscus comment system -->
     <div class="card">
       <h3>Community Comments</h3>
       <p>Join the conversation below or in the <a href="https://github.com/violetChai/YOUR-REPO-NAME/discussions" target="_blank">Forum</a>.</p>
       <div id="giscus_container"></div>
-     <script src="https://giscus.app/client.js"
+      <script src="https://giscus.app/client.js"
         data-repo="violetChai/aboutcode.io"
         data-repo-id="R_kgDOPBc2wg"
         data-category="Announcements"
@@ -210,11 +248,11 @@
         data-lang="en"
         crossorigin="anonymous"
         async>
-     </script>
+      </script>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="fade-in">
     <h2>Contact</h2>
     <div class="card">
       <p><strong>📍 Sydney, Australia</strong></p>
@@ -234,5 +272,16 @@
   <footer>
     <p>&copy; 2025 About Code • Practical tech for curious minds.</p>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
