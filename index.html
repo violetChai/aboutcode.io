@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en" data-theme="dark">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,191 +16,219 @@
       --card-bg: #f0f0f0;
       --nav-bg: #eaeaea;
       --footer-bg: #e0e0e0;
-    }[data-theme="dark"] {
-  --bg: #1e1f26;
-  --text: #eaeaea;
-  --primary: #2c2d3c;
-  --secondary: #aa99e8;
-  --highlight: #fca311;
-  --card-bg: #2a2b36;
-  --nav-bg: #1c1c24;
-  --footer-bg: #1a1a21;
-}
+    }
 
-* {
-  box-sizing: border-box;
-}
+    [data-theme="dark"] {
+      --bg: #1e1f26;
+      --text: #eaeaea;
+      --primary: #2c2d3c;
+      --secondary: #aa99e8;
+      --highlight: #fca311;
+      --card-bg: #2a2b36;
+      --nav-bg: #1c1c24;
+      --footer-bg: #1a1a21;
+    }
 
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  transition: background 0.3s, color 0.3s;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-header {
-  text-align: center;
-  padding: 4rem 1rem 2rem;
-  background: var(--primary);
-  color: var(--text);
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
 
-.full-divider {
-  width: 100%;
-  height: 4px;
-  background-color: var(--highlight);
-  margin: 0 auto 1.5rem;
-  border: none;
-}
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      background: var(--primary);
+      color: var(--text);
+    }
 
-nav {
-  background: var(--nav-bg);
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 1px solid var(--highlight);
-}
+    .full-divider {
+      width: 100%;
+      height: 4px;
+      background-color: var(--highlight);
+      margin: 0 auto 1.5rem;
+      border: none;
+    }
 
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
+    nav {
+      background: var(--nav-bg);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--highlight);
+      flex-wrap: nowrap;
+    }
 
-nav a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-nav a:hover {
-  color: var(--highlight);
-  text-shadow: 0 0 5px var(--highlight);
-}
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: nowrap;
+      flex: 1;
+      justify-content: center;
+    }
 
-.theme-toggle, .menu-toggle {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: var(--highlight);
-}
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-.menu-toggle {
-  display: none;
-}
+    nav a:hover {
+      color: var(--highlight);
+      text-shadow: 0 0 5px var(--highlight);
+    }
 
-h2 {
-  border-bottom: 2px solid var(--highlight);
-  padding-bottom: 0.5rem;
-}
+    .theme-toggle, .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--highlight);
+    }
 
-section {
-  padding: 3rem 1rem;
-  max-width: 960px;
-  margin: auto;
-}
+    .menu-toggle {
+      display: none;
+    }
 
-.card {
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
+    h2 {
+      border-bottom: 2px solid var(--highlight);
+      padding-bottom: 0.5rem;
+    }
 
-input, textarea, button {
-  display: block;
-  width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.75rem;
-  border: 1px solid #555;
-  border-radius: 6px;
-  font-family: 'Inter', sans-serif;
-  background: #121217;
-  color: var(--text);
-}
+    section {
+      padding: 3rem 1rem;
+      max-width: 960px;
+      margin: auto;
+    }
 
-button {
-  background-color: var(--secondary);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-}
+    .card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: var(--footer-bg);
-  color: var(--text);
-  border-top: 2px solid var(--highlight);
-}
+    input, textarea, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #555;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      background: #121217;
+      color: var(--text);
+    }
 
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .menu-toggle {
-    display: inline-block;
-  }
-}
+    button {
+      background-color: var(--secondary);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
 
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--footer-bg);
+      color: var(--text);
+      border-top: 2px solid var(--highlight);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: inline-block;
+      }
+      .nav-controls {
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#robotics">Robotics</a>
-      <a href="#programming">Programming</a>
-      <a href="#gamedev">Game Dev</a>
-      <a href="#resources">Resources</a>
-      <a href="https://github.com/violetChai/aboutcode.io/discussions" target="_blank">Forum</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-controls">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#robotics">Robotics</a>
+        <a href="#programming">Programming</a>
+        <a href="#gamedev">Game Dev</a>
+        <a href="#resources">Resources</a>
+        <a href="https://github.com/violetChai/aboutcode.io/discussions" target="_blank">Forum</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
     <button class="theme-toggle" id="themeToggle">🌙</button>
-  </nav>  <header>
+  </nav>
+
+  <header>
     <h1>About Code</h1>
     <div class="full-divider"></div>
     <p><i>Practical tech for curious minds</i></p>
     <p><i>Programming, Robotics, and Game Development</i></p>
-  </header>  <section id="about">
+  </header>
+
+  <section id="about">
     <h2>About</h2>
     <div class="card">
       <p>This site shares practical guidance on robotics, embedded systems, software engineering, and game development. You'll find real-world examples, distilled insights, and downloadable resources designed to support both learners and educators.</p>
     </div>
-  </section>  <section id="robotics">
+  </section>
+
+  <section id="robotics">
     <h2>Robotics</h2>
     <div class="card">
       <p>Robotics education must bridge the gap between electronics and software. My resources emphasize real-time thinking, sensor data reliability, and embedded control theory using platforms like Arduino. Expect guides, architecture patterns, and code-level insights for scalable robotics development.</p>
       <p><strong>Teaching Focus:</strong> Building embedded systems that handle unpredictability with robustness and clarity.</p>
     </div>
-  </section>  <section id="programming">
+  </section>
+
+  <section id="programming">
     <h2>Programming</h2>
     <div class="card">
       <p>Clear, modular programming is foundational. This section covers maintainable system design in C++, Python, and embedded C. Topics include language fundamentals, toolchains, and patterns that make code more testable and extendable.</p>
       <p><strong>Educator's Angle:</strong> Good code is self-documenting and resilient — and teaches itself to the reader.</p>
     </div>
-  </section>  <section id="gamedev">
+  </section>
+
+  <section id="gamedev">
     <h2>Game Development</h2>
     <div class="card">
       <p>Game development blends interaction design with systems thinking. My materials explore Unity development with C#, focusing on input systems, state machines, performance, and player feedback — all from an educational standpoint.</p>
       <p><strong>Industry Note:</strong> Game engines are powerful learning platforms for simulation, design systems, and HCI education.</p>
     </div>
-  </section>  <section id="resources">
+  </section>
+
+  <section id="resources">
     <h2>Resources</h2>
     <div class="card">
       <h3>Logic Gates Reference Guide</h3>
@@ -221,7 +250,9 @@ footer {
       <p>A starter resource with code templates, pin diagrams, and notes for common components.</p>
       <a href="arduino-guide.pdf" download>Download Arduino Guide</a>
     </div>
-  </section>  <section id="contact">
+  </section>
+
+  <section id="contact">
     <h2>Contact</h2>
     <div class="card">
       <p><strong>📍 Sydney, Australia</strong></p>
@@ -236,9 +267,13 @@ footer {
         <a href="https://linkedin.com/in/programmerlynn" target="_blank">LinkedIn</a>
       </div>
     </div>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>&copy; 2025 About Code • Practical tech for curious minds.</p>
-  </footer>  <script>
+  </footer>
+
+  <script>
     const toggle = document.getElementById('themeToggle');
     const html = document.documentElement;
     const currentTheme = localStorage.getItem('theme');
@@ -262,5 +297,6 @@ footer {
       const nav = document.getElementById('navLinks');
       nav.classList.toggle('active');
     }
-  </script></body>
+  </script>
+</body>
 </html>
