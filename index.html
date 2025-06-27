@@ -73,6 +73,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      flex: 1;
     }
 
     .nav-links {
@@ -81,6 +82,10 @@
       flex-wrap: nowrap;
       flex: 1;
       justify-content: center;
+      flex-shrink: 1;
+      flex-grow: 1;
+      overflow-x: auto;
+      white-space: nowrap;
     }
 
     nav a {
@@ -95,16 +100,22 @@
       text-shadow: 0 0 5px var(--highlight);
     }
 
-    .theme-toggle, .menu-toggle {
+    .theme-toggle {
       background: none;
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
       color: var(--highlight);
+      align-self: flex-start;
+      margin-left: auto;
     }
 
     .menu-toggle {
       display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--highlight);
     }
 
     h2 {
@@ -159,6 +170,7 @@
         flex-direction: column;
         width: 100%;
         display: none;
+        white-space: normal;
       }
       .nav-links.active {
         display: flex;
