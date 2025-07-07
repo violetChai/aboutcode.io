@@ -7,8 +7,6 @@
   <title>About Code</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <!-- Optional FontAwesome CDN for icons -->
-  <script src="https://kit.fontawesome.com/YOUR_KIT_HERE.js" crossorigin="anonymous"></script>
   <style>
     :root {
       --bg: #ffffff;
@@ -194,7 +192,7 @@
       <p>This site shares practical guidance on robotics, embedded systems, software engineering, and game development. You'll find real-world examples, distilled insights, and downloadable resources designed to support both learners and educators.</p>
     </div>
   </section>
-  <!-- 🧠 GAME SECTION -->
+
   <section id="game">
     <h2>Code Quiz</h2>
     <div class="card">
@@ -208,30 +206,22 @@
 
   <section id="robotics">
     <h2>Robotics</h2>
-    <div class="card">
-      <p>Robotics education must bridge the gap between electronics and software...</p>
-    </div>
+    <div class="card"><p>Robotics education must bridge the gap between electronics and software...</p></div>
   </section>
 
   <section id="programming">
     <h2>Programming</h2>
-    <div class="card">
-      <p>Clear, modular programming is foundational...</p>
-    </div>
+    <div class="card"><p>Clear, modular programming is foundational...</p></div>
   </section>
 
   <section id="gamedev">
     <h2>Game Development</h2>
-    <div class="card">
-      <p>Game development blends interaction design with systems thinking...</p>
-    </div>
+    <div class="card"><p>Game development blends interaction design with systems thinking...</p></div>
   </section>
 
   <section id="resources">
     <h2>Resources</h2>
-    <div class="card">
-      <p>Reference PDFs and guides available to download...</p>
-    </div>
+    <div class="card"><p>Reference PDFs and guides available to download...</p></div>
   </section>
 
   <section id="contact">
@@ -243,12 +233,10 @@
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 About Code • Practical tech for curious minds.</p>
-  </footer>
+  <footer><p>&copy; 2025 About Code • Practical tech for curious minds.</p></footer>
 
   <script>
-    // Theme toggle
+    // Dark mode
     const toggle = document.getElementById('themeToggle');
     const html = document.documentElement;
     const currentTheme = localStorage.getItem('theme');
@@ -267,90 +255,50 @@
     });
 
     function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      nav.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('active');
     }
 
-    // 🎮 Quiz Game Logic
+    // Quiz game logic
     const questions = [
-      {
-        q: "What language is commonly used for microcontrollers like Arduino?",
-        answers: [
-          { text: "C/C++", correct: true },
-          { text: "Python", correct: false },
-          { text: "JavaScript", correct: false }
-        ]
-      },
-      {
-        q: "Which game engine uses C# as its main scripting language?",
-        answers: [
-          { text: "Unity", correct: true },
-          { text: "Unreal Engine", correct: false },
-          { text: "Godot", correct: false }
-        ]
-      },
-      {
-        q: "Which command lists files in Linux?",
-        answers: [
-          { text: "ls", correct: true },
-          { text: "dir", correct: false },
-          { text: "list", correct: false }
-        ]
-      },
-      {
-        q: "Which symbol begins a comment in Python?",
-        answers: [
-          { text: "#", correct: true },
-          { text: "//", correct: false },
-          { text: "/*", correct: false }
-        ]
-      }
+      { q: "What language is commonly used for Arduino?", a: [{ text: "C/C++", correct: true }, { text: "Python", correct: false }, { text: "JavaScript", correct: false }] },
+      { q: "Which game engine uses C#?", a: [{ text: "Unity", correct: true }, { text: "Unreal", correct: false }, { text: "Godot", correct: false }] },
+      { q: "Which command lists files in Linux?", a: [{ text: "ls", correct: true }, { text: "dir", correct: false }, { text: "list", correct: false }] },
+      { q: "Which symbol begins a comment in Python?", a: [{ text: "#", correct: true }, { text: "//", correct: false }, { text: "/*", correct: false }] }
     ];
 
-    let shuffled = [];
-    let currentQuestion = 0;
-    let score = 0;
-
-    const questionEl = document.getElementById("quiz-question");
-    const optionsEl = document.getElementById("quiz-options");
-    const feedbackEl = document.getElementById("quiz-feedback");
-    const scoreEl = document.getElementById("quiz-score");
-    const nextBtn = document.getElementById("next-button");
+    let shuffled = [], currentQuestion = 0, score = 0;
+    const qEl = document.getElementById("quiz-question"),
+          optEl = document.getElementById("quiz-options"),
+          fbEl = document.getElementById("quiz-feedback"),
+          scoreEl = document.getElementById("quiz-score"),
+          nextBtn = document.getElementById("next-button");
 
     function startQuiz() {
       shuffled = questions.sort(() => Math.random() - 0.5);
-      currentQuestion = 0;
-      score = 0;
+      currentQuestion = 0; score = 0;
       renderQuestion();
     }
 
     function renderQuestion() {
       const q = shuffled[currentQuestion];
-      questionEl.innerHTML = `<strong>Question ${currentQuestion + 1}:</strong> ${q.q}`;
-      optionsEl.innerHTML = "";
-      feedbackEl.textContent = "";
+      qEl.innerHTML = `<strong>Question ${currentQuestion + 1}:</strong> ${q.q}`;
+      optEl.innerHTML = "";
+      fbEl.textContent = "";
       nextBtn.style.display = "none";
-
-      q.answers.forEach((a) => {
+      q.a.forEach(ans => {
         const btn = document.createElement("button");
-        btn.textContent = a.text;
-        btn.onclick = () => selectAnswer(btn, a.correct);
-        optionsEl.appendChild(btn);
+        btn.textContent = ans.text;
+        btn.onclick = () => selectAnswer(btn, ans.correct);
+        optEl.appendChild(btn);
       });
-
       scoreEl.textContent = `Score: ${score}/${shuffled.length}`;
     }
 
-    function selectAnswer(button, isCorrect) {
-      if (isCorrect) {
-        feedbackEl.textContent = "✅ Correct!";
-        feedbackEl.style.color = "limegreen";
-        score++;
-      } else {
-        feedbackEl.textContent = "❌ Try again.";
-        feedbackEl.style.color = "tomato";
-      }
-      Array.from(optionsEl.children).forEach((btn) => (btn.disabled = true));
+    function selectAnswer(btn, correct) {
+      fbEl.textContent = correct ? "✅ Correct!" : "❌ Try again.";
+      fbEl.style.color = correct ? "limegreen" : "tomato";
+      if (correct) score++;
+      Array.from(optEl.children).forEach(b => b.disabled = true);
       nextBtn.style.display = "inline-block";
       scoreEl.textContent = `Score: ${score}/${shuffled.length}`;
     }
@@ -358,16 +306,15 @@
     function nextQuestion() {
       currentQuestion++;
       if (currentQuestion >= shuffled.length) {
-        questionEl.innerHTML = `🎉 Quiz complete! Final Score: ${score}/${shuffled.length}`;
-        optionsEl.innerHTML = "";
-        feedbackEl.textContent = "";
+        qEl.innerHTML = `🎉 Quiz complete! Final Score: ${score}/${shuffled.length}`;
+        optEl.innerHTML = "";
+        fbEl.textContent = "";
         nextBtn.style.display = "none";
-        return;
+      } else {
+        renderQuestion();
       }
-      renderQuestion();
     }
 
-    // Start the quiz when page loads
     window.onload = startQuiz;
   </script>
 </body>
